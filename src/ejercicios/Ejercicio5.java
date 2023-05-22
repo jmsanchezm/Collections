@@ -15,7 +15,6 @@ public class Ejercicio5 {
 
 		// Creamos dos colecciones, una de tipo HashMap y otra de tipo ArrayList
 		HashMap<String, Double> productos = new HashMap<String, Double>();
-		ArrayList<Integer> existencias = new ArrayList<Integer>();
 
 		// Creamos el Scanner
 		Scanner read = new Scanner(System.in);
@@ -40,24 +39,12 @@ public class Ejercicio5 {
 				System.out.println("Introduzca el nombre del producto");
 				nombreProducto = read.next();
 
-				// Mientras el nombre esté en el mapa,
-				while (productos.containsKey(nombreProducto)) {
-					// Le solicitará de nuevo el dato
-					System.out.println("Por favor, introduzca un nombre que no se encuentre en el listado ya");
-					nombreProducto = read.next();
-				}
-
 				// Pedirá el precio
 				System.out.println("Introduzca el precio del producto");
 				precio = read.nextDouble();
 
-				// Pedirá el stock
-				System.out.println("Introduzca el número  de existencias del producto");
-				stock = read.nextInt();
-
 				// Lo añade a las collections
 				productos.put(nombreProducto, precio);
-				existencias.add(stock);
 
 				// Mensaje
 				System.out.println("Producto añadido correctamente");
@@ -69,23 +56,22 @@ public class Ejercicio5 {
 				// Pedimos el nombre
 				System.out.println("Introduzca el nombre del producto a dar de baja");
 				nombreProducto = read.next();
-				// Mientras que el nombre del producto no se encuentre en el mapa
-				while (!productos.containsKey(nombreProducto)) {
-					// Pediremos el nombre del producto
-					System.out.println("Introduzca un producto válido");
-					nombreProducto = read.next();
+				
+				//Si el nombre del producto se encuentra en la collection producto
+				if (productos.containsKey(nombreProducto)) {
+					//Se eliminará el producto
+					productos.remove(nombreProducto);
+				//De lo contrario
+				}else {
+					//Mostrará un mensaje de error
+					System.out.println("El producto no se encuentra");
 				}
-
-				// Eliminamos el producto
-				productos.remove(nombreProducto);
-				existencias.remove(stock);
 				break;
 
 			// En el tercer caso
 			case 3:
 				// Mostramos el contenido de las collections
 				System.out.println("Productos" + productos);
-				System.out.println("Existencias:" + existencias);
 				break;
 
 			// En el caso de que sea 0
@@ -99,7 +85,7 @@ public class Ejercicio5 {
 		} while (opcion != 0);
 
 		read.close();
-		
+
 	}
 
 }
