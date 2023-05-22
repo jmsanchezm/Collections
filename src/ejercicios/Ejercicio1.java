@@ -20,7 +20,6 @@ public class Ejercicio1 {
 
 		//Mostramos el resultado al salir del bloque
 		System.out.println(coleccion);
-
 	}
 
 }

@@ -33,7 +33,6 @@ public class Ejercicio3 {
 
 		// Mostramos el resultado al salir del bucle
 		System.out.println(collection);
-
 	}
 
 }

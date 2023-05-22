@@ -50,6 +50,7 @@ public class Ejercicio4 {
 
 		//Mostramos los números por pantalla
 		System.out.println(numero + " " + estrella);
+		
 	}
 
 }

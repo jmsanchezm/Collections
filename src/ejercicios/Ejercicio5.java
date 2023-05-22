@@ -99,6 +99,7 @@ public class Ejercicio5 {
 		} while (opcion != 0);
 
 		read.close();
+		
 	}
 
 }

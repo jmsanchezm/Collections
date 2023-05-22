@@ -34,7 +34,6 @@ public class Ejercicio2 {
 
 		// Mostramos el resultado al salir del bucle
 		System.out.println(collection);
-
 	}
 
 }
