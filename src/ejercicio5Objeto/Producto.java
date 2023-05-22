@@ -1,6 +1,8 @@
 package ejercicio5Objeto;
 
-public class Producto {
+import java.util.Objects;
+
+public class Producto implements Comparable <Producto> {
 
 	private String nombre;
 	private double precio;
@@ -15,7 +17,7 @@ public class Producto {
 		if (nombre != null && !nombre.isEmpty()) {
 			this.nombre = nombre;
 		}
-		if (precio < 0) {
+		if (precio > 0) {
 			this.precio = precio;
 		}
 	}
@@ -47,9 +49,34 @@ public class Producto {
 	 * @param precio the precio to set
 	 */
 	public void setPrecio(double precio) {
-		if (precio < 0) {
+		if (precio > 0) {
 			this.precio = precio;
 		}
 	}
 
+	@Override
+	public String toString() {
+		String res = "Producto: "+  nombre + ", precio: " + precio;
+		return res;
+	}
+
+	@Override 
+	public boolean equals (Object obj) {
+		boolean res= false;
+		Producto pro = (Producto)obj ;
+		if (this.nombre.equals(pro.nombre)) {
+			res=true;
+		}
+		return res;
+	}
+
+	@Override
+	public int compareTo(Producto o) {
+		int res =0;
+		res= this.nombre.compareTo(o.nombre);
+		return 0;
+	}
+
+	
+	
 }
